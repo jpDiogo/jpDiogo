@@ -1,16 +1,23 @@
-### Hi there 👋
+### Simple Commands
 
-<!--
-**jpDiogo/jpDiogo** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Usually all that's needed is running:
 
-Here are some ideas to get you started:
+```bash
+    npm start
+```
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Followed by launching the web app directly on VS code (green play button) to debug using breakpoints and the like.
+
+To deploy the current state of my website to github pages just run:
+
+```bash
+    npm run deploy -- -m "<MESSAGE I WANT TO SEND>"
+```
+
+### 🔭 Discovering Tasks
+
+### 💬 Ideas
+
+### ⚡ Light Thinking
+
+### 🌱 Growing
