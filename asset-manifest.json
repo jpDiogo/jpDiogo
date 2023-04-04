@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/jpDiogo/static/css/main.073c9b0a.css",
+    "main.js": "/jpDiogo/static/js/main.2d8f67fa.js",
+    "static/js/787.eebe1ca4.chunk.js": "/jpDiogo/static/js/787.eebe1ca4.chunk.js",
+    "static/media/logo.svg": "/jpDiogo/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/jpDiogo/index.html",
+    "main.073c9b0a.css.map": "/jpDiogo/static/css/main.073c9b0a.css.map",
+    "main.2d8f67fa.js.map": "/jpDiogo/static/js/main.2d8f67fa.js.map",
+    "787.eebe1ca4.chunk.js.map": "/jpDiogo/static/js/787.eebe1ca4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.2d8f67fa.js"
+  ]
+}
