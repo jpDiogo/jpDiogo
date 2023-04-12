@@ -1,32 +1,34 @@
 import React from 'react';
+import './MainContent.css';
+import './home_C/Home.js';
 
 const MainContent = ({ activeNavItem }) => {
   let content;
-  if (activeNavItem === 'home') {
-    content = (
-      <div>
-        <h1>Home</h1>
-        <p>Welcome to the home page!</p>
-      </div>
-    );
-  } else if (activeNavItem === 'about') {
-    content = (
-      <div>
-        <h1>About</h1>
-        <p>Learn more about our company.</p>
-      </div>
-    );
-  } else if (activeNavItem === 'contact') {
-    content = (
-      <div>
-        <h1>Contact</h1>
-        <p>Get in touch with us.</p>
-      </div>
-    );
+  let HOME = 'home';
+  let ABOUT = 'about';
+  let EXPERIENCE = 'experience';
+  let CONTACT = 'contact';
+
+  function getHome() { return (<Header/>);}
+
+
+  switch(activeNavItem) {
+    case HOME:
+      content = getHome();
+    break;
+    case ABOUT:
+      content = getHome();
+    break;
+    case EXPERIENCE:
+      content = getHome();
+    break;
+    case CONTACT:
+      content = getHome();
+    break;
   }
 
   return (
-    <div className="container mt-4">
+    <div className="container jp_mainContent">
       {content}
     </div>
   );

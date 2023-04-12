@@ -1,0 +1,38 @@
+:root {
+    --header-color: #359381; /* Define the custom property */
+}
+
+.jp_header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    
+}
+
+.header_name {
+    font-size: 2rem;
+    color: var(--header-color);
+    pointer-events: none;
+    font-family: Helvetica;
+}
+
+.header_nav a {
+    text-decoration: none;
+    color: var(--header-color);
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin: 0 10px;
+    font-weight: 600;
+    font-family: Helvetica;
+}
+
+.header_nav a:hover,
+.header_nav a.active {
+    background:var(--header-color);
+    color: white;
+}
