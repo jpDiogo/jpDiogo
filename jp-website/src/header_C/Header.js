@@ -1,19 +1,18 @@
-import React, { useState } from 'react';
 import './Header.css';
 
-const Header = ({ setActiveNavItem, activeNavItem }) => {
+const Header = ({ setActiveNavItem, CONFIG }) => {
     const handleNavItemClick = (navItem) => {
       setActiveNavItem(navItem);
     };
   
     return (
-      <header class='jp_header'>
-        <h2 class="header_name">João Diogo</h2>
-        <nav class='header_nav'>
-            <a href='#'>Home</a>
-            <a href='#'>About</a>
-            <a href='#'>Experience</a>
-            <a href='#'>Contact</a>
+      <header className='jp_header'>
+        <h2 className="header_name">João Diogo</h2>
+        <nav className='header_nav'>
+            <a href='#' onClick={() => handleNavItemClick(CONFIG.HOME)} >Home</a>
+            <a href='#' onClick={() => handleNavItemClick(CONFIG.ABOUT)}>About</a>
+            <a href='#' onClick={() => handleNavItemClick(CONFIG.EXPERIENCE)}>Experience</a>
+            <a href='#' onClick={() => handleNavItemClick(CONFIG.CONTACT)}>Contact</a>
         </nav>
       </header>
     );

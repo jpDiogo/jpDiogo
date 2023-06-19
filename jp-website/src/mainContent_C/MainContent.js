@@ -1,30 +1,31 @@
 import React from 'react';
 import './MainContent.css';
-import './home_C/Home.js';
+import Home from './home_C/Home';
 
-const MainContent = ({ activeNavItem }) => {
+const MainContent = ({ activeNavItem, CONFIG }) => {
   let content;
-  let HOME = 'home';
-  let ABOUT = 'about';
-  let EXPERIENCE = 'experience';
-  let CONTACT = 'contact';
 
-  function getHome() { return (<Header/>);}
+  function getHome() { return (<Home/>); }
 
 
   switch(activeNavItem) {
-    case HOME:
+    case CONFIG.HOME:
       content = getHome();
     break;
-    case ABOUT:
-      content = getHome();
+    case CONFIG.ABOUT:
+      console.log('ABOUT');
+      //content = getHome();
     break;
-    case EXPERIENCE:
-      content = getHome();
+    case CONFIG.EXPERIENCE:
+      console.log('EXPERIENCE');
+      //content = getHome();
     break;
-    case CONTACT:
-      content = getHome();
+    case CONFIG.CONTACT:
+      console.log('CONTACT');
+      //content = getHome();
     break;
+    default:
+      console.log("MainContent: Switch error");
   }
 
   return (
