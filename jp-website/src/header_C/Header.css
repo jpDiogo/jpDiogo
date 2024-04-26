@@ -7,30 +7,22 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 2rem 6.25rem; /* Converted from px to rem */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
+    height: 4rem;
 }
 
 .header_name {
-    font-size: 2rem; /* Already in rem, optimal for scalability */
     color: var(--header-color);
-    pointer-events: none;
-    font-family: 'Helvetica', 'Arial', sans-serif; /* Added Arial for broader compatibility */
+    
 }
 
 .header_nav button {
     background: none;
     border: none;
-    text-decoration: none;
     color: var(--header-color);
-    padding: 0.375rem 0.9375rem; /* Converted from px to rem */
+    padding: 0.3rem 0.9rem; /* Converted from px to rem */
     border-radius: 1.25rem; /* Converted from px to rem */
     margin: 0 0.625rem; /* Converted from px to rem */
     font-weight: 600;
-    font-family: 'Helvetica', 'Arial', sans-serif;
     cursor: pointer;
 }
 
