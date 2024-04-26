@@ -1,7 +1,7 @@
 import './Header.css';
 
 const Header = ({ setActiveNavItem, CONFIG }) => {
-    const handleNavItemClick = (navItem) => {
+    const handleNavItemClick = (navItem) => () => {
       setActiveNavItem(navItem);
     };
   
@@ -9,13 +9,13 @@ const Header = ({ setActiveNavItem, CONFIG }) => {
       <header className='jp_header'>
         <h2 className="header_name">João Diogo</h2>
         <nav className='header_nav'>
-            <a href='#' onClick={() => handleNavItemClick(CONFIG.HOME)} >Home</a>
-            <a href='#' onClick={() => handleNavItemClick(CONFIG.ABOUT)}>About</a>
-            <a href='#' onClick={() => handleNavItemClick(CONFIG.EXPERIENCE)}>Experience</a>
-            <a href='#' onClick={() => handleNavItemClick(CONFIG.CONTACT)}>Contact</a>
+            <button onClick={handleNavItemClick(CONFIG.HOME)} >Home</button>
+            <button onClick={handleNavItemClick(CONFIG.ABOUT)}>About</button>
+            <button onClick={handleNavItemClick(CONFIG.EXPERIENCE)}>Experience</button>
+            <button onClick={handleNavItemClick(CONFIG.CONTACT)}>Contact</button>
         </nav>
       </header>
     );
-  }; 
-  
-  export default Header;
+};
+
+export default Header;

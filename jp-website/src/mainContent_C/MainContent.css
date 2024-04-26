@@ -1,7 +1,0 @@
-:root {
-    --bground-color: #f9f9f9; /* Define the custom property */
-}
-
-.jp_mainContent {
-    background: var(--bground-color);
-}

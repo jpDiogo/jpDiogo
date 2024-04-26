@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Header from './header_C/Header';
-import MainContent from './mainContent_C/MainContent';
 import './App.css';
 
 const CONFIG = {
@@ -16,7 +15,6 @@ function App() {
   return (
     <div>
       <Header setActiveNavItem={setActiveNavItem} CONFIG={CONFIG}/>
-      <MainContent activeNavItem={activeNavItem} CONFIG={CONFIG}/>
     </div>
   );
 }
