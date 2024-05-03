@@ -2,6 +2,17 @@
 import './World.css';
 import { useRef, useEffect } from 'react';
 import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+
+import MyStreet from './MyStreet';
+
+const store_objects = []; // Store objects to dispose later
+const camera_position = { x: 0, y: 35, z: 75 };
+
+// Our light will begin by being an ambient light
+function createLight() { return new THREE.AmbientLight(0xffffff); }
+
+function createGridHelper() { return new THREE.GridHelper(100, 100); }
 
 const World = () => {
     const worldRef = useRef(null);
@@ -14,23 +25,32 @@ const World = () => {
             const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
             const renderer = new THREE.WebGLRenderer();
             scene.background = new THREE.Color('#f9f9f9');
+            renderer.setPixelRatio(window.devicePixelRatio);
             renderer.setSize(width, height);
             worldRef.current.appendChild(renderer.domElement);
+            store_objects.push(renderer);
 
-            // Add cube
-            const geometry = new THREE.BoxGeometry(1, 1, 1);
-            const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-            const cube = new THREE.Mesh(geometry, material);
-            scene.add(cube);
+            // Creating things for the scene
+            const light = createLight();
+            const gridHelper = createGridHelper();
 
-            camera.position.z = 5;
+            const myStreet = new MyStreet(scene, store_objects);
+            myStreet.create();
+
+            scene.add(light);
+            scene.add(gridHelper);
+
+            // Setting camera position
+            camera.position.set(camera_position.x, camera_position.y, camera_position.z);
+
+            // Controls
+            const controls = new OrbitControls(camera, renderer.domElement);
 
             // Animation loop
             const animate = function () {
                 requestAnimationFrame(animate);
 
-                cube.rotation.x += 0.01;
-                cube.rotation.y += 0.01;
+                controls.update();
 
                 renderer.render(scene, camera);
             };
@@ -46,15 +66,13 @@ const World = () => {
                 while(scene.children.length > 0)
                     scene.remove(scene.children[0]); 
                 
-                // Dispose renderer, scene, geometry and material
-                geometry.dispose(); material.dispose();
-                // Dispose renderer
-                renderer.dispose();
+                while(store_objects.length > 0)
+                    store_objects.pop().dispose();
             };
     }, []);
 
     return (
-        <div ref={worldRef} style={{ width: '100vw', height: '100vh' }}></div>
+        <div id="three_world" ref={worldRef} style={{ width: '100vw', height: '100vh' }}></div>
     );
 }
 
