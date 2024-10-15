@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './header_C/Header';
-import World from './threejs_C/World';
+import Home from './home_C/Home';
+import Experience from './experience_C/Experience';
 import './App.css';
 
 const CONFIG = {
@@ -16,12 +18,16 @@ function App() {
   const renderContent = () => {
     switch (activeNavItem) {
       case CONFIG.HOME:
-        return <World/>;
+        console.log('> Home page entered.');
+        return <Home/>;
       case CONFIG.ABOUT:
+        console.log('> About page entered.');
         return <div>About</div>;
       case CONFIG.EXPERIENCE:
-        return <div>Experience</div>;
+        console.log('> Experience page entered.');
+        return <Experience/>;
       case CONFIG.CONTACT:
+        console.log('> Contact page entered.');
         return <div>Contact</div>;
       default:
         return <div>Home</div>;
