@@ -59,15 +59,9 @@ const World = () => {
 
             // CLEANUP: Component is unmounted triggers this code (or if the dependency array could change)
             return () => {
-                // Remove renderer dom element
-                if (renderer.domElement.parentNode === worldRef.current) 
-                    worldRef.current.removeChild(renderer.domElement);
-                // Remove objects from scene
-                while(scene.children.length > 0)
-                    scene.remove(scene.children[0]); 
-                
-                while(store_objects.length > 0)
-                    store_objects.pop().dispose();
+                store_objects.forEach(obj => {
+                    if (obj.dispose) obj.dispose();
+                });
             };
     }, []);
 

@@ -30,8 +30,8 @@ class MyStreet {
   }
 
   createHouse() {
-    const house = // ... create the house
-    this.scene.add(house);
+    //const house = // ... create the house
+    //this.scene.add(house);
   }
 
 }

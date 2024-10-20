@@ -7,7 +7,7 @@ const Header = ({ setActiveNavItem, activeNavItem, CONFIG }) => {
     };
   
     return (
-      <header className='jp_header p-5 d-flex justify-content-between align-items-center'>
+      <header className='jp_header p-3 d-flex justify-content-center align-items-stretch'>
         <h2 className="header_name">João Diogo</h2>
         <nav className='header_nav'>
           <button className={activeNavItem === CONFIG.HOME ? 'active' : ''} onClick={handleNavItemClick(CONFIG.HOME)}>Home</button>

@@ -1,0 +1,41 @@
+#court {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+#court_img {
+    transform: translateY(100%) scale(1.5);
+}
+
+#left_basket_img {
+    transform: translate(45%, -10px) scale(1);
+    z-index: 1;
+} 
+#right_basket_img {
+    transform: translate(-42%, -12px) scale(1);
+}
+
+#basketball_img {
+    position: absolute;
+    bottom: 30%; /* Starting above the court */
+    width: 60px; /* Adjust size as needed */
+    animation: bounce 1.2s cubic-bezier(0.51,-0.06, 0.43, 1.06) infinite;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(-180px) scale(1);
+    }
+    50% {
+        transform: translateY(-75px) scale(0.95, 1.05);
+    }
+    100% {
+        transform: translateY(-180px) scale(1);
+    }
+}
+
+
+
+

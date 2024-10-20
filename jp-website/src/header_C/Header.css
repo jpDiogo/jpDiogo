@@ -1,5 +1,5 @@
 :root {
-    --header-color: #359381; /* Define the custom property */
+    --header-color: #ff725e; /* Define the custom property */
 }
 
 .jp_header {
@@ -12,7 +12,8 @@
 
 .header_name {
     color: var(--header-color);
-    
+    margin-right: auto;
+    font-weight: bold;
 }
 
 .header_nav button {
